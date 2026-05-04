@@ -1,0 +1,6 @@
+[{
+  "EventBusName": "default",
+  "Source": "aws.guardduty",
+  "DetailType": "GuardDuty Finding",
+  "Detail": "{\"severity\":7.8,\"type\":\"UnauthorizedAccess:IAMUser/MaliciousIPCaller\",\"id\":\"mock-finding-iam-001\",\"accountId\":\"123456789012\",\"region\":\"us-east-1\",\"resource\":{\"resourceType\":\"AccessKey\",\"accessKeyDetails\":{\"accessKeyId\":\"AKIAIOSFODNN7EXAMPLE\",\"userArn\":\"arn:aws:iam::123456789012:user/test-user\",\"userName\":\"test-user\",\"userType\":\"IAMUser\"}}}"
+}]
