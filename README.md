@@ -27,7 +27,10 @@ EventBridge → SNS → Lambda (x4 parallel) → CloudWatch → Security Hub
 7. Check CloudWatch Logs for results
 
 ## NIST 800-53 Control Mapping
-[table mapping each Lambda to its controls]
+See nist.md in docs/
+
+## Architecture
+See architecture.md in docs/
 
 ## Cost
 $0 — fully free tier.
