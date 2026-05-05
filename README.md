@@ -34,7 +34,7 @@ See nist.md in docs/
 See architecture.md in docs/ for more information
 
 ## Cost
-$0 — fully free tier.
+Fully free tier.
 
 ## Production Considerations
 - Replace AWS-managed KMS keys with CMKs
