@@ -30,7 +30,8 @@ EventBridge → SNS → Lambda (x4 parallel) → CloudWatch → Security Hub
 See nist.md in docs/
 
 ## Architecture
-See architecture.md in docs/
+<img src="https://github.com/alyons99/AWS-EVENT-DRIVEN-SECURITY-PIPELINE/blob/eeb30cc5c701479f94d37c10bc5c874207d9caf1/docs/AWS-EVENT-DRIVEN-SECURE-PIPELINE.png" alt="Alt text" width="300" height="200">
+See architecture.md in docs/ for more information
 
 ## Cost
 $0 — fully free tier.
