@@ -6,6 +6,7 @@ Autoremediation pipeline that detects for types of attacks/misconfigurations and
 2. Unauthorized IAM access
 3. Closes unprotected ports
 4. Block public S3 access
+
 With the goal of hitting near zero mean-time-to-repair (MTTR)
 
 ## Pipeline Flow
