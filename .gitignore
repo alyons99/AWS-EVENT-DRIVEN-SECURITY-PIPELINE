@@ -1,1 +1,11 @@
-main.tf
+#Terraform
+terraform.tfvars
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+terraform.tfstate.d/
+
+#Lambda build artifacts
+builds/
+lambda/**/*.zip
