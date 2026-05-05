@@ -1,10 +1,12 @@
 # AWS GuardDuty Auto-Remediation Pipeline
 
-## Architecture
-[embed the pipeline diagram image here]
-
 ## What This Builds
-One paragraph — the plain English summary you now know cold.
+Autoremediation pipeline that detects for types of attacks/misconfigurations and autoremediates
+1. Unauthorized EC2 access
+2. Unauthorized IAM access
+3. Closes unprotected ports
+4. Block public S3 access
+With the goal of hitting near zero mean-time-to-repair (MTTR)
 
 ## Pipeline Flow
 EventBridge → SNS → Lambda (x4 parallel) → CloudWatch → Security Hub

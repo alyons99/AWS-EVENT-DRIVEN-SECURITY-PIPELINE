@@ -47,10 +47,10 @@ def lambda_handler(event, context):
         #Rules already removed, not an error
         status = "skipped"
 
-    #Capture the mmtr
+    #Capture the mttr
     mttr = (datetime.now(timezone.utc) - start).total_seconds()
 
-    #Create a json log with info and mmtr
+    #Create a json log with info and mttr
     log.info(json.dumps({
         "action"       : "sg_lockdown",
         "status"       : status,

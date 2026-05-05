@@ -63,10 +63,10 @@ def lambda_handler(event, context):
         #No policy exists
         pass
 
-    #Capture the mmtr
+    #Capture the mttr
     mttr = (datetime.now(timezone.utc) - start).total_seconds()
 
-    #Create a json log with info and mmtr
+    #Create a json log with info and mttr
     log.info(json.dumps({
         "action"      : "s3_block_public",
         "status"      : "remediated",
