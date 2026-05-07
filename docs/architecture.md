@@ -18,9 +18,9 @@ idle and costs nothing until a finding arrives.
 In a production deployment, Amazon GuardDuty continuously ingests three 
 data sources:
 
-- **AWS CloudTrail** — every API call made in the account
-- **VPC Flow Logs** — all network traffic metadata
-- **DNS Logs** — domain resolution requests from within the VPC
+- **AWS CloudTrail**  every API call made in the account
+- **VPC Flow Logs**  all network traffic metadata
+- **DNS Logs**  domain resolution requests from within the VPC
 
 GuardDuty's ML models analyze these sources against a continuously updated 
 threat intelligence feed and behavioral baseline for the account. When 
@@ -115,9 +115,9 @@ Continuously records configuration changes to IAM users, EC2 security
 groups, and S3 buckets — exactly the resource types the four Lambda 
 functions remediate. Two managed Config rules run continuously:
 
-- `INCOMING_SSH_DISABLED` — verifies no security group permits port 22 
+- `INCOMING_SSH_DISABLED`  verifies no security group permits port 22 
   from `0.0.0.0/0`
-- `S3_BUCKET_PUBLIC_ACCESS_PROHIBITED` — verifies all S3 buckets have 
+- `S3_BUCKET_PUBLIC_ACCESS_PROHIBITED`  verifies all S3 buckets have 
   public access blocks enforced
 
 If a remediation is manually reverted, Config detects the drift on the 
