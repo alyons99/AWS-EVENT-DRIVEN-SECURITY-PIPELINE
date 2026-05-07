@@ -13,7 +13,7 @@ idle and costs nothing until a finding arrives.
 
 ## Pipeline Tiers
 
-### Tier 1 — Detection
+### Tier 1 Detection
 
 In a production deployment, Amazon GuardDuty continuously ingests three 
 data sources:
@@ -33,7 +33,7 @@ finding schema, so the entire downstream pipeline behaves identically to
 a live deployment. Swapping in a real GuardDuty detector requires no 
 changes to any other component.
 
-### Tier 2 — Event Routing
+### Tier 2 Event Routing
 
 An EventBridge rule evaluates every incoming event against three 
 conditions simultaneously:
@@ -42,7 +42,7 @@ conditions simultaneously:
 - `detail-type` must equal `GuardDuty Finding`  
 - `detail.severity` must be numerically >= 4.0
 
-### Tier 3 — Fan-Out
+### Tier 3 Fan-Out
 
 The SNS topic receives matched findings from EventBridge and delivers 
 them to all subscribers in parallel. Key properties:
@@ -53,7 +53,7 @@ them to all subscribers in parallel. Key properties:
 - Topic policy restricts publishing rights exclusively to the 
   EventBridge service identity
 
-### Tier 4 — Auto-Remediation Lambdas
+### Tier 4 Auto-Remediation Lambdas
 
 Four Lambda functions subscribe to the SNS topic. Each 
 has its own least-privilege IAM execution role and handles a specific 
@@ -86,7 +86,7 @@ policy and surgically removes only statements that grant public access,
 preserving any legitimate role-based or service-based policy statements 
 that should remain.
 
-### Tier 5 — Audit, Notify, Verify
+### Tier 5 Audit, Notify, Verify
 
 **AWS Security Hub**  
 Each Lambda calls `update_findings` after remediation, marking the 
@@ -108,7 +108,7 @@ notifications about pipeline health MTTR threshold breaches, alarm
 state changes, and recovery notifications. Subscribers can include email, 
 PagerDuty, or Slack webhook endpoints.
 
-### Tier 6 — Compliance Persistence
+### Tier 6 Compliance Persistence
 
 **AWS Config**  
 Continuously records configuration changes to IAM users, EC2 security 
