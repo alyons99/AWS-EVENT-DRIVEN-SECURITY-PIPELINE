@@ -61,7 +61,7 @@ class of misconfiguration:
 
 **IAM Revoke** `NIST AC-2, AC-6`  
 Triggers on credential-based findings. Disables the compromised IAM 
-access key by setting its status to Inactive. The key is not deleted — 
+access key by setting its status to Inactive. The key is not deleted 
 preserving it allows forensic investigation of what actions were taken 
 with it before compromise was detected.
 
@@ -112,7 +112,7 @@ PagerDuty, or Slack webhook endpoints.
 
 **AWS Config**  
 Continuously records configuration changes to IAM users, EC2 security 
-groups, and S3 buckets — exactly the resource types the four Lambda 
+groups, and S3 buckets exactly the resource types the four Lambda 
 functions remediate. Two managed Config rules run continuously:
 
 - `INCOMING_SSH_DISABLED`  verifies no security group permits port 22 
@@ -129,7 +129,7 @@ EventBridge to trigger re-remediation automatically.
 All Config snapshots and Lambda execution logs are archived to a 
 dedicated S3 bucket with versioning enabled, AES256 encryption at rest, 
 and all four public access block settings enforced. Versioning provides 
-tamper-evidence — overwritten or deleted objects retain their version 
+tamper-evidence overwritten or deleted objects retain their version 
 history. A lifecycle rule expires current object versions after 90 days 
 and cleans up non-current versions after 30 days.
 
